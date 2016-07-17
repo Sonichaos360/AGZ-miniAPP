@@ -1,0 +1,15 @@
+header, .bar
+{
+	background: url('../img/bg.png') #0066cc;
+	padding-top: 2px;
+}
+
+.bar, .bar-tab, .bar a
+{
+	color: #fff !important;
+}
+
+#wrap
+{
+	margin-top: 60px;
+}
