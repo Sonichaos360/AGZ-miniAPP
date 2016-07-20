@@ -1,0 +1,22 @@
+<h1 id="testSingle"></h1>
+<script type="text/javascript">
+    $("#testSingle").html("Single - "+$("input[name='SaveId']").val());
+    // $(document).ready(function(){
+    //     $.ajax({
+    //         url: 'http://agzradio.com/ws/index.php?Action=getLastPodcasts',
+    //         dataType: 'json',
+    //         type: 'GET',
+    //         async: true,
+    //         success: function (data) {
+    //             $.each(data, function( i, item ) {
+    //                 $("#TableViewPodcasts").append('<li class="table-view-cell media" id="PodcastItem" data-id="'+item.id_topic+'"><a class="navigate-right"><img class="media-object pull-left imgformatter" src="'+item.podimg+'"><div class="media-body"><span class="podtitle">'+capitalize(item.titulo).substring(0, 35)+'...</span><p class="poddesc">Publicado '+item.time+'</p></div></a></li>');
+    //             });
+    //         },
+    //         error: function (data) {
+    //             alert("La sección no está disponible.");
+    //         }
+    //     });
+
+    //     return false;
+    // });
+</script>

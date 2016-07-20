@@ -11,13 +11,6 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$("body").on("click", ".podcastelement", function(){
-
-		loadSection($(this).attr("data-href"));
-
-		return false;
-	});
-
 	$("#PlayButton").on("click", function(){
 
 		var status = $(this).attr("data-status");
@@ -38,7 +31,21 @@ $(document).ready(function(){
 		return true;
 	});
 
+	$("#wrap").on("click", "#PodcastItem", function(){
+
+		//El boton back volverá a
+		$("input[name='BackPage']").val("home.html");
+
+		//Datos de la sección destino
+		$("input[name='SaveId']").val($(this).attr("data-id"))
+		loadSection("single.html");
+
+		return false;
+	});	
+
 });
+
+document.addEventListener("backbutton", onBackKeyDown, false);
 
 //Funciones
 function loadSection(name)
@@ -46,14 +53,35 @@ function loadSection(name)
 	$.ajax({
 		url: name,
 		dataType: 'html',
-		type: 'POST',
+		type: 'GET',
 		async: true,
 		success: function (data) {
-				$("#wrap").html(data);
+			$("#wrap").html(data);
         },
         error: function (data) {
         	alert("La sección no está disponible.");
         }
     });
+}
 
+function capitalize(s)
+{
+    return s[0].toUpperCase() + s.slice(1);
+}
+
+function onBackKeyDown(e) {
+	
+	var a = $("input[name='BackPage']").val();
+
+	if(a == "")
+	{
+		navigator.app.exitApp();
+	}
+	else
+	{
+		$("input[name='BackPage']").val("")
+		loadSection(a);
+	}
+
+	return false;
 }

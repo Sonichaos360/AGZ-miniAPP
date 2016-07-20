@@ -11,5 +11,24 @@ header, .bar
 
 #wrap
 {
-	margin-top: 60px;
+	margin: 45px 0;
+	height: 1000px;
+	overflow: auto !important;
+}
+
+.imgformatter
+{
+	margin-top: 8px;
+	width: 60px;
+}
+
+.podtitle
+{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.poddesc
+{
+	font-size: 11px;
 }

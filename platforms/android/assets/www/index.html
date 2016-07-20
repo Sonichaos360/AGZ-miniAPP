@@ -15,42 +15,9 @@
     </head>
     <body>
         <header class="bar bar-nav">
-          <center><img src="../img/logo.png" width="55px" title="AGZ Radio" /></center>
+          <center><img src="img/logo.png" width="55px" title="AGZ Radio" /></center>
         </header>
-        <div id="wrap">
-          
-          <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right">
-                <img class="media-object pull-left" src="http://placehold.it/42x42">
-                <div class="media-body">
-                  Item 1
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right">
-                <img class="media-object pull-left" src="http://placehold.it/42x42">
-                <div class="media-body">
-                  Item 1
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right">
-                <img class="media-object pull-left" src="http://placehold.it/42x42">
-                <div class="media-body">
-                  Item 1
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-
-        </div>
-
+        <div id="wrap"></div>
         <script type="text/javascript">
             //app.initialize();
         </script>
@@ -76,10 +43,13 @@
             <span class="tab-label">Settings</span>
           </a>
         </nav>
-
         <footer>
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
             <script type="text/javascript" src="js/jquery.min.js"></script>
             <script type="text/javascript" src="js/ratchet.min.js"></script>
+            <script type="text/javascript" src="js/agz.js"></script>
+            <input type="hidden" name="SaveId" />
+            }<input type="hidden" name="BackPage" value="" />
         </footer>
     </body>
 </html>
