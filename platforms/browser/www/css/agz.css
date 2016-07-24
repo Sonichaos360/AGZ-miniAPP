@@ -37,3 +37,36 @@ header, .bar
 {
 	display: none;
 }
+
+.singlepodcast .header
+{
+	display: block;
+	width: 100%;
+	height: 250px;
+	background: url('../img/podbg.jpg') #0066cc;
+	background-position: fixed;
+	background-size: cover;
+	color: #fff;
+}
+
+.singlepodcast .header h1
+{
+	font-size: 25px;
+	padding-top: 100px;
+}
+
+.singlepodcast .postdata .contenido
+{
+	font-size: 17px;
+	padding: 8px;
+	line-height: 22px;
+	letter-spacing: 0.02em;
+	padding-bottom: 500px;
+}
+
+.singlepodcast .postdata .date
+{
+	font-size: 14px;
+	padding: 8px;
+	line-height: 20px;
+}
