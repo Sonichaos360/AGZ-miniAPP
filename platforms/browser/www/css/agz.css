@@ -32,3 +32,8 @@ header, .bar
 {
 	font-size: 11px;
 }
+
+#ctrlaudio
+{
+	display: none;
+}

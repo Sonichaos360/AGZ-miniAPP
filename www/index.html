@@ -22,27 +22,22 @@
             //app.initialize();
         </script>
         <nav class="bar bar-tab">
-          <a class="tab-item active" href="#">
+          <a class="tab-item" href="#" id="PlayButton" data-status="0">
+            <span class="icon icon-play"></span>
+            <span class="tab-label">Escuchar en Vivo</span>
+          </a>
+          <a class="tab-item active" href="#" id="HomeLink">
             <span class="icon icon-home"></span>
             <span class="tab-label">Home</span>
           </a>
           <a class="tab-item" href="#">
-            <span class="icon icon-person"></span>
-            <span class="tab-label">Profile</span>
-          </a>
-          <a class="tab-item" href="#">
-            <span class="icon icon-star-filled"></span>
-            <span class="tab-label">Favorites</span>
-          </a>
-          <a class="tab-item" href="#">
-            <span class="icon icon-search"></span>
-            <span class="tab-label">Search</span>
-          </a>
-          <a class="tab-item" href="#">
-            <span class="icon icon-gear"></span>
-            <span class="tab-label">Settings</span>
+            <span class="icon icon-compose"></span>
+            <span class="tab-label">Mensaje</span>
           </a>
         </nav>
+        <audio id="ctrlaudio">
+            <source src="http://184.172.175.14:8007/;*.nsv"></source>
+        </audio>
         <footer>
             <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
             <script type="text/javascript" src="js/jquery.min.js"></script>

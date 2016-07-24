@@ -11,26 +11,6 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$("#PlayButton").on("click", function(){
-
-		var status = $(this).attr("data-status");
-
-		if(status == 1)
-		{
-			$("#Audio").trigger('pause');
-			$(this).attr("data-status", 0);
-			$(this).html('<a href="#" id="PlayButton" data-status="0"><i class="fa fa-play"></i></a>');
-		}
-		else
-		{
-			$("#Audio").trigger('play');
-			$(this).attr("data-status", 1);
-			$(this).html('<a href="#" id="PlayButton" data-status="0"><i class="fa fa-pause"></i></a>');
-		}
-
-		return true;
-	});
-
 	$("#wrap").on("click", "#PodcastItem", function(){
 
 		//El boton back volverá a
@@ -42,6 +22,35 @@ $(document).ready(function(){
 
 		return false;
 	});	
+
+	$("body").on("click", "#HomeLink", function(){
+
+		loadSection("home.html");
+		return false;
+	});
+
+	$("body").on("click", "#PlayButton", function(){
+
+		var elem = document.getElementById('ctrlaudio');
+		var status = $(this).attr("data-status");
+
+		if(status == 0)
+		{
+			$(elem).trigger('play');
+			$(this).attr('data-status', 1);
+			$(this).find(".icon").removeClass("icon-play");
+			$(this).find(".icon").addClass("icon-pause");
+		}
+		else
+		{
+			$(elem).trigger('pause');
+			$(this).attr('data-status', 0);
+			$(this).find(".icon").removeClass("icon-pause");
+			$(this).find(".icon").addClass("icon-play");
+		}
+
+		return false;
+	});
 
 });
 
