@@ -103,3 +103,21 @@ header, .bar
 	width: 100%;
 	display: block;
 }
+
+#drawer
+{
+	background: #0066cc;
+	width: 89%;
+	float: left;
+}
+
+#fullcontent
+{
+	float: left;
+	width: 100% ;
+}
+
+.oculto
+{
+	display: none;
+}

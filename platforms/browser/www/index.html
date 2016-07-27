@@ -11,52 +11,42 @@
         <title>AGZ Radio</title>
     </head>
     <body>
-   <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-   <label for="drawer-toggle" id="drawer-toggle-label"></label>
-   <header>Header</header>
-   <nav id="drawer">
-      <ul>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-         <li><a href="#">Menu Item</a></li>
-      </ul>
-   </nav>
-   <div id="page-content">
-      <p>Page Content</p>
-   </div>
-   
-        <header class="bar bar-nav">
-          <center><img src="img/logo.png" width="80px" title="AGZ Radio" /></center>
-        </header>
-        <div id="wrap"></div>
-        <script type="text/javascript">
-            //app.initialize();
-        </script>
-        <nav class="bar bar-tab">
-          <a class="tab-item" href="#" id="PlayButton" data-status="0">
-            <span class="icon icon-play"></span>
-            <span class="tab-label"><center>En Vivo</center></span>
-          </a>
-          <a class="tab-item active" href="#" id="HomeLink">
-            <span class="icon icon-home"></span>
-            <span class="tab-label"><center>Home</center></span>
-          </a>
-          <a class="tab-item" href="#">
-            <span class="icon icon-compose"></span>
-            <span class="tab-label"><center>Chat</center></span>
-          </a>
-        </nav>
-        <audio id="ctrlaudio">
-            <source src="http://184.172.175.14:8007/;*.nsv"></source>
-        </audio>
-        <footer>
-            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-            <script type="text/javascript" src="js/jquery.min.js"></script>
-            <script type="text/javascript" src="js/ratchet.min.js"></script>
-            <script type="text/javascript" src="js/agz.js"></script>
-            <input type="hidden" name="SaveId" />
-            }<input type="hidden" name="BackPage" value="" />
-        </footer>
+        <div id="drawer" class="oculto" data-status="0">
+            sadasd
+        </div>
+        <div id="fullcontent">
+            <header class="bar bar-nav">
+              <center><a href="#" id="logo"><img src="img/logo.png" width="80px" title="AGZ Radio" /></a></center>
+            </header>
+            <div id="wrap"></div>
+            <script type="text/javascript">
+                //app.initialize();
+            </script>
+            <nav class="bar bar-tab">
+              <a class="tab-item" href="#" id="PlayButton" data-status="0">
+                <span class="icon icon-play"></span>
+                <span class="tab-label"><center>En Vivo</center></span>
+              </a>
+              <a class="tab-item active" href="#" id="HomeLink">
+                <span class="icon icon-home"></span>
+                <span class="tab-label"><center>Home</center></span>
+              </a>
+              <a class="tab-item" href="#">
+                <span class="icon icon-compose"></span>
+                <span class="tab-label"><center>Chat</center></span>
+              </a>
+            </nav>
+            <audio id="ctrlaudio">
+                <source src="http://184.172.175.14:8007/;*.nsv"></source>
+            </audio>
+            <footer>
+                <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+                <script type="text/javascript" src="js/jquery.min.js"></script>
+                <script type="text/javascript" src="js/ratchet.min.js"></script>
+                <script type="text/javascript" src="js/agz.js"></script>
+                <input type="hidden" name="SaveId" />
+                }<input type="hidden" name="BackPage" value="" />
+            </footer>
+        </div>
     </body>
 </html>
