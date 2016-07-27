@@ -18,8 +18,8 @@
             success: function (data) {
 
                 $(".singlepodcast .header h1").html('<center>'+data.titulo+'</center>');
-                $(".singlepodcast .postdata .date").html('<strong>Publicado '+data.time+'</strong>');
-                $(".singlepodcast .postdata").find(".contenido").html(data.contenido);
+                $(".singlepodcast .postdata .date").html('<div class="containerbox"><strong>Publicado '+data.time+'</strong></div>');
+                $(".singlepodcast .postdata").find(".contenido").html('<div class="containerbox">'+data.contenido+'</div>');
 
             },
             error: function (data) {

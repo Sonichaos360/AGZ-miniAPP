@@ -1,7 +1,15 @@
+body
+{
+	background: #ececec;
+}
+
 header, .bar
 {
 	background: url('../img/bg.png') #0066cc;
-	padding-top: 2px;
+	background-repeat: repeat;
+	padding-top: 10px;
+	height: 70px;
+	border:none;
 }
 
 .bar, .bar-tab, .bar a
@@ -9,11 +17,22 @@ header, .bar
 	color: #fff !important;
 }
 
+.bar-tab .icon
+{
+	font-size: 25px !important;
+}
+
+.bar-tab a, .bar-tab span
+{
+	font-size: 12px !important;
+}
+
 #wrap
 {
-	margin: 45px 0;
+	margin: 70px 0;
 	height: 1000px;
 	overflow: auto !important;
+	padding-bottom: 580px;
 }
 
 .imgformatter
@@ -24,8 +43,14 @@ header, .bar
 
 .podtitle
 {
+	display: block;
 	font-size: 13px;
 	font-weight: bold;
+}
+
+.table-view-cell
+{
+	padding: 11px 11px 11px 15px;
 }
 
 .poddesc
@@ -58,15 +83,23 @@ header, .bar
 .singlepodcast .postdata .contenido
 {
 	font-size: 17px;
-	padding: 8px;
 	line-height: 22px;
 	letter-spacing: 0.02em;
-	padding-bottom: 500px;
 }
 
 .singlepodcast .postdata .date
 {
 	font-size: 14px;
-	padding: 8px;
 	line-height: 20px;
+}
+
+.containerbox
+{
+	margin: 10px auto;
+	background: #fff;
+	color: #333;
+	padding: 12px;
+	box-shadow: #bdc3c7 0px 1px 0px;
+	width: 100%;
+	display: block;
 }
