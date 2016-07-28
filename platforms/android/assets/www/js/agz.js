@@ -40,6 +40,18 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("body").on("click", "#HomeLink", function(){
+
+		loadSection("home.html");
+		return false;
+	});
+
+	$("body").on("click", "#ChatButton", function(){
+
+		loadSection("chat.html");
+		return false;
+	});
+
 	$("body").on("click", "#PlayButton", function(){
 
 		var elem = document.getElementById('ctrlaudio');

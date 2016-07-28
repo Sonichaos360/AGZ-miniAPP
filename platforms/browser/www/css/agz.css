@@ -121,3 +121,35 @@ header, .bar
 {
 	display: none;
 }
+
+.navsample
+{
+	padding: 0;
+	margin: 0;
+}
+
+.chatnav
+{
+	color: #333;
+	width: 100%;
+	padding: 10px;
+}
+
+.chatnav input
+{
+	width: 78%;
+	float: left;
+	height: 50px;
+}
+
+.chatnav button
+{
+	color: #fff;
+	border: none;
+	width: 20%;
+	margin-left: 2%;
+	float: left;
+	height: 50px;
+	background: #0066cc;
+	font-size: 30px;
+}
