@@ -102,6 +102,8 @@ header, .bar
 	box-shadow: #bdc3c7 0px 1px 0px;
 	width: 100%;
 	display: block;
+	overflow: auto;
+	word-break: break-all;
 }
 
 #drawer
