@@ -19,9 +19,6 @@
               <center><a href="#" id="logo"><img src="img/logo.png" width="80px" title="AGZ Radio" /></a></center>
             </header>
             <div id="wrap"></div>
-            <script type="text/javascript">
-                //app.initialize();
-            </script>
             <nav class="bar bar-tab navsample oculto"></nav>
             <nav class="bar bar-tab navorigen">
               <a class="tab-item" href="#" id="PlayButton" data-status="0">
@@ -42,11 +39,14 @@
             </audio>
             <footer>
                 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+                <script type="text/javascript">
+                    app.initialize();
+                </script>
                 <script type="text/javascript" src="js/jquery.min.js"></script>
                 <script type="text/javascript" src="js/ratchet.min.js"></script>
                 <script type="text/javascript" src="js/agz.js"></script>
                 <input type="hidden" name="SaveId" />
-                }<input type="hidden" name="BackPage" value="" />
+                <input type="hidden" name="BackPage" value="" />
             </footer>
         </div>
     </body>

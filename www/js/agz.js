@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+	// if(localStorage.getItem('AGZNombre') == null)
+	// {
+	// 	localStorage.setItem('AGZNombre', 'Lucho Vergara');
+	// }
+	// else
+	// {
+	// 	alert(localStorage.getItem('AGZNombre'));
+	// }
+	
 	loadSection("home.html");
 
 	$(document).ready(function(){
