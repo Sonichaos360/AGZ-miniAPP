@@ -212,3 +212,60 @@ function doResize()
 {
 	$( "#drawer" ).css("height", ($(window).height()+10)+"px");
 }
+
+    function enviarmensaje()
+    {
+        var contenido = $("input[name='Contenido']").val();
+
+        if(contenido.length > 0)
+        {
+            $.ajax({
+                url: 'http://agzradio.com/ws/index.php?Action=setMensaje&Nombre='+$("input[name='Nombre']").val()+'&Contenido='+contenido,
+                dataType: 'json',
+                type: 'GET',
+                async: true,
+                success: function (data) {
+
+                    if(data == true)
+                    {
+                        $("#chatcontent").prepend('<div class="containerbox"><b>'+$("input[name='Nombre']").val()+':</b> '+$("input[name='Contenido']").val()+'</div>');
+                        $("input[name='Contenido']").val("");
+                    }
+
+                },
+                error: function (data) {
+                    alert("La sección no está disponible.");
+                }
+            });
+        }
+
+        return false;
+    }
+
+    function updateChatContent()
+    {
+        $.ajax({
+            url: 'http://agzradio.com/ws/index.php?Action=getMensajes&Nombre='+$("input[name='Nombre']").val()+'&LastId='+$("input[name='LastIdChat']").val(),
+            dataType: 'json',
+            type: 'GET',
+            async: true,
+            success: function (data) {
+
+                $.each(data, function( i, item ) {
+
+                    if(i == 0)
+                    {
+                        $("input[name='LastIdChat']").val(item.id);
+                    }
+
+                    $("#chatcontent").prepend('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                });;
+
+            },
+            error: function (data) {
+                alert("La sección no está disponible.");
+            }
+        });
+
+        return false;
+    }
