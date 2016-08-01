@@ -24,3 +24,4 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 </widget>
+

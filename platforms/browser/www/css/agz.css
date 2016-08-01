@@ -108,9 +108,45 @@ header, .bar
 
 #drawer
 {
-	background: #0066cc;
+	background: #fefefe;
+	box-shadow: #bdc3c7 0px 1px 0px;
 	width: 89%;
 	float: left;
+	padding-top: 75px;
+	border-right: 1px solid #ddd;
+}
+
+#drawer ul, #drawer ul li
+{
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 100%;
+}
+
+#drawer ul li a
+{
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 100%;
+	color: #333;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-right: 10%;
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+#drawer ul li span
+{
+	float: left;
+}
+
+#drawer ul li strong
+{
+	float: right;
 }
 
 #fullcontent
@@ -154,4 +190,12 @@ header, .bar
 	height: 50px;
 	background: #0066cc;
 	font-size: 30px;
+}
+
+#MenuButton
+{
+	float: left;
+	color: #fff;
+	font-size: 30px;
+	margin-left: 20px;
 }

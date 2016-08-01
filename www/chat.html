@@ -5,47 +5,58 @@
 
 <script>
     $(document).ready(function(){
+
+        $("input[name='Nombre']").val(localStorage.getItem('AGZNombre'));
+
         $(".navorigen").hide();
         $(".navsample").html('<div class="chatnav"><input type="text" placeholder="Mensaje..." name="Contenido" /><button id="EnviarMensaje"><span class="icon icon-check"></span></button></div>');
         $(".navsample").show();
 
         updateChatContent();
 
-        setInterval("updateChatContent()", 2000);
+        ChatIntervalId = setInterval("updateChatContent()", 2000);
 
         $("#EnviarMensaje").on("click", function(){
 
-            if($("input[name='Nombre']").val() == "")
-            {
-                $("input[name='Nombre']").val($("input[name='Contenido']").val());
-                $("input[name='Contenido']").val("");
-                alert("Se estableció tu nombre. Ya puedes participar del chat.");
-            }
-            else
-            {
-                $.ajax({
-                    url: 'http://agzradio.com/ws/index.php?Action=setMensaje&Nombre='+$("input[name='Nombre']").val()+'&Contenido='+$("input[name='Contenido']").val(),
-                    dataType: 'json',
-                    type: 'GET',
-                    async: true,
-                    success: function (data) {
-
-                        if(data == true)
-                        {
-                            $("#chatcontent").prepend('<div class="containerbox"><b>'+$("input[name='Nombre']").val()+':</b> '+$("input[name='Contenido']").val()+'</div>');
-                            $("input[name='Contenido']").val("");
-                        }
-                        
-                    },
-                    error: function (data) {
-                        alert("La sección no está disponible.");
-                    }
-                });
-            }
+            enviarmensaje();
 
             return false;
         });
+
+
+        $('body').on("keypress", "input[name='Contenido']", function(e) {
+
+            if (e.keyCode == 13) 
+            {
+                enviarmensaje();
+            }
+        });
+
     });
+
+    function enviarmensaje()
+    {
+        $.ajax({
+            url: 'http://agzradio.com/ws/index.php?Action=setMensaje&Nombre='+$("input[name='Nombre']").val()+'&Contenido='+$("input[name='Contenido']").val(),
+            dataType: 'json',
+            type: 'GET',
+            async: true,
+            success: function (data) {
+
+                if(data == true)
+                {
+                    $("#chatcontent").prepend('<div class="containerbox"><b>'+$("input[name='Nombre']").val()+':</b> '+$("input[name='Contenido']").val()+'</div>');
+                    $("input[name='Contenido']").val("");
+                }
+
+            },
+            error: function (data) {
+                alert("La sección no está disponible.");
+            }
+        });
+
+        return false;
+    }
 
     function updateChatContent()
     {

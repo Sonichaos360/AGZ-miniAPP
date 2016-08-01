@@ -1,3 +1,6 @@
+//Variable para almacenar ID de interval del chat
+var ChatIntervalId = "";
+
 $(document).ready(function(){
 
 	// if(localStorage.getItem('AGZNombre') == null)
@@ -8,7 +11,7 @@ $(document).ready(function(){
 	// {
 	// 	alert(localStorage.getItem('AGZNombre'));
 	// }
-	
+
 	loadSection("home.html");
 
 	$(document).ready(function(){
@@ -46,6 +49,25 @@ $(document).ready(function(){
 	$("body").on("click", "#HomeLink", function(){
 
 		loadSection("home.html");
+
+		return false;
+	});
+
+	$("body").on("click", "#MiPerfil", function(){
+
+		loadSection("perfil.html");
+		return false;
+	});
+
+	$("body").on("click", "#Configuracion", function(){
+
+		loadSection("configuracion.html");
+		return false;
+	});
+
+	$("body").on("click", "#AcercaDe", function(){
+
+		loadSection("acerca.html");
 		return false;
 	});
 
@@ -57,7 +79,18 @@ $(document).ready(function(){
 
 	$("body").on("click", "#ChatButton", function(){
 
-		loadSection("chat.html");
+		Name = localStorage.getItem('AGZNombre');
+
+		if(Name != null && Name.length > 1)
+		{
+			loadSection("chat.html");
+		}
+		else
+		{
+			alert("Debes indicar tu Nombre para participar en el Chat.");
+			loadSection("perfil.html");
+		}
+		
 		return false;
 	});
 
@@ -84,7 +117,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$("#logo").on("click", function(){
+	$("#MenuButton").on("click", function(){
 
 		if($("#drawer").attr("data-status") == 0)
 		{
@@ -102,6 +135,22 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("#drawer ul li a").on("click", function(){
+		$("header #MenuButton").trigger("click");	
+	});
+
+	$("body").on("click", "#SavePersonalData", function(){
+
+		localStorage.setItem('AGZNombre', $("input[name='Nombre']").val());
+		localStorage.setItem('AGZEmail', $("input[name='Email']").val());
+		localStorage.setItem('AGZEdad', $("input[name='Edad']").val());
+		localStorage.setItem('AGZSexo', $("select[name='Sexo']").find(":selected").text());
+
+		alert("Los datos se guardaron correctamente.");
+
+		return false;
+	});
+
 });
 
 document.addEventListener("backbutton", onBackKeyDown, false);
@@ -115,6 +164,20 @@ function loadSection(name)
 		type: 'GET',
 		async: true,
 		success: function (data) {
+
+			//Stop intertval del chat
+			if(ChatIntervalId != "")
+			{
+				clearInterval(ChatIntervalId);
+			}
+			
+			//Mostramos si tenemos un footer personalizado
+			if(!$(".navorigen").is(":visible"))
+			{
+				$(".navsample").html("");
+				$(".navorigen").show();
+			}
+
 			$("#wrap").html(data);
         },
         error: function (data) {

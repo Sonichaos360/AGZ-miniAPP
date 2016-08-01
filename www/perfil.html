@@ -1,0 +1,48 @@
+<div class="containerbox">
+    <strong>Nombre</strong><br />
+    <input type="text" name="Nombre" placeholder="Tu Nombre" />
+    <br />
+    <strong>Dirección de Email</strong><br />
+    <input type="email" name="Email" placeholder="Tu Email" />
+    <strong>Edad</strong><br />
+    <input type="number" name="Edad" placeholder="Tu Edad" />
+    <strong>Sexo</strong><br />
+    <select name="Sexo">
+        <option value="Sin Indicar" selected>Sin Indicar</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>
+</div>
+
+<button class="btn btn-primary btn-block" id="SavePersonalData">Guardar Datos</button>
+
+<script>
+    $(document).ready(function(){
+
+        var Nombre = localStorage.getItem('AGZNombre');
+        var Email = localStorage.getItem('AGZEmail');
+        var Edad = localStorage.getItem('AGZEdad');
+        var Sexo = localStorage.getItem('AGZSexo');
+
+        if(Nombre != null)
+        {
+            $("input[name='Nombre']").val(Nombre);
+        }
+
+        if(Email != null)
+        {
+            $("input[name='Email']").val(Email);
+        }
+
+        if(Edad != null)
+        {
+            $("input[name='Edad']").val(Edad);
+        }
+
+        if(Sexo != null)
+        {
+            $("input[name='Sexo']").val(Sexo);
+        }
+
+    });
+</script>
