@@ -162,6 +162,7 @@ $(document).ready(function(){
 });
 
 document.addEventListener("backbutton", onBackKeyDown, false);
+document.addEventListener("offline", function(){ alert("No tienes conección a Internet. Activa el WI-FI o 3G/4G para continuar.") }, false);
 
 //Funciones
 function loadSection(name)
@@ -189,7 +190,7 @@ function loadSection(name)
 			$("#wrap").html(data);
         },
         error: function (data) {
-        	alert("La sección no está disponible.");
+        	alert("No tienes conección a Internet. Activa el WI-FI o 3G/4G para continuar.");
         }
     });
 }
