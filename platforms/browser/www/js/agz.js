@@ -52,6 +52,16 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("body").on("click", "#Programas", function(){
+
+		//El boton back volverá a
+		$("input[name='BackPage']").val("home.html");
+
+		loadSection("programas.html");
+
+		return false;
+	});
+
 	$("body").on("click", "#MiPerfil", function(){
 
 		loadSection("perfil.html");
@@ -149,6 +159,35 @@ $(document).ready(function(){
 			return false;
 		}
 
+	});
+
+	$("body").on("click", ".podelement", function(){
+
+		var name = $(this).attr("data-name");
+		var id = $(this).attr("data-id");
+
+		//El boton back volverá a
+		$("input[name='BackPage']").val("programas.html");
+
+		loadSection("showpodcasts.html");
+
+        $.ajax({
+            url: 'http://agzradio.com/ws/index.php?Action=getLastPodcastsId&Id='+id,
+            dataType: 'json',
+            type: 'GET',
+            async: true,
+            success: function (data) {
+                $.each(data, function( i, item ) 
+                {
+                    $("#TableViewPodcasts").append('<li class="table-view-cell media" id="PodcastItem" data-id="'+item.id_topic+'"><img class="media-object pull-left imgformatter" src="'+item.podimg+'"><div class="media-body"><span class="podtitle">'+capitalize(item.titulo).substring(0, 250)+'</span><p class="poddesc">Publicado '+item.time+'</p></div></a></li>');
+                });
+            },
+            error: function (data) {
+                alert("La sección no está disponible.");
+            }
+        });
+
+		return false;
 	});
 
 });
