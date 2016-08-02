@@ -14,25 +14,7 @@
 
         updateChatContent();
 
-        ChatIntervalId = setInterval("updateChatContent()", 2000);
-
-        $("#EnviarMensaje").on("click", function(){
-
-            enviarmensaje();
-
-            return false;
-        });
-
-
-        $('body').on("keypress", "input[name='Contenido']", function(e) {
-
-            if (e.keyCode == 13) 
-            {
-                enviarmensaje();
-                return false;
-            }
-
-        });
+        ChatIntervalId = setInterval('updateChatContent()', 2000);
 
     });
 

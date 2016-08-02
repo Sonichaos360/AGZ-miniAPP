@@ -3,15 +3,6 @@ var ChatIntervalId = "";
 
 $(document).ready(function(){
 
-	// if(localStorage.getItem('AGZNombre') == null)
-	// {
-	// 	localStorage.setItem('AGZNombre', 'Lucho Vergara');
-	// }
-	// else
-	// {
-	// 	alert(localStorage.getItem('AGZNombre'));
-	// }
-
 	loadSection("home.html");
 
 	$(document).ready(function(){
@@ -151,6 +142,23 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$('body').on("click", "#EnviarMensaje", function(){
+
+		enviarmensaje();
+
+		return false;
+	});
+
+
+	$('body').on("keypress", "input[name='Contenido']", function(e) {
+
+		if (e.keyCode == 13) 
+		{
+			enviarmensaje();
+			return false;
+		}
+
+	});
 });
 
 document.addEventListener("backbutton", onBackKeyDown, false);
@@ -251,15 +259,29 @@ function doResize()
             async: true,
             success: function (data) {
 
+            	var lastid = 0;
+
                 $.each(data, function( i, item ) {
 
-                    if(i == 0)
-                    {
-                        $("input[name='LastIdChat']").val(item.id);
-                    }
+                	if($("input[name='LastIdChat']").val() == "0")
+                	{
 
-                    $("#chatcontent").prepend('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                		$("#chatcontent").append('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                	}
+                	else
+                	{
+
+                		$("#chatcontent").prepend('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                	}
+
+                	if(i == 0)
+                	{
+                		lastid = item.id;
+                	}
+     
                 });;
+
+                 $("input[name='LastIdChat']").val(lastid);
 
             },
             error: function (data) {
