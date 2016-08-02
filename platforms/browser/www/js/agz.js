@@ -3,6 +3,14 @@ var ChatIntervalId = "";
 
 $(document).ready(function(){
 
+	//Evaluamos auto play
+	var aut = localStorage.getItem('AGZAutoPlay');
+
+    if(parseInt(aut) == 1)
+    {
+		doplay();
+    }
+
 	loadSection("home.html");
 
 	$(document).ready(function(){
@@ -87,24 +95,7 @@ $(document).ready(function(){
 
 	$("body").on("click", "#PlayButton", function(){
 
-		var elem = document.getElementById('ctrlaudio');
-		var status = $(this).attr("data-status");
-
-		if(status == 0)
-		{
-			$(elem).trigger('play');
-			$(this).attr('data-status', 1);
-			$(this).find(".icon").removeClass("icon-play");
-			$(this).find(".icon").addClass("icon-pause");
-		}
-		else
-		{
-			$(elem).trigger('pause');
-			$(this).attr('data-status', 0);
-			$(this).find(".icon").removeClass("icon-pause");
-			$(this).find(".icon").addClass("icon-play");
-		}
-
+		doplay();
 		return false;
 	});
 
@@ -159,11 +150,35 @@ $(document).ready(function(){
 		}
 
 	});
+
 });
 
+
 document.addEventListener("backbutton", onBackKeyDown, false);
+document.addEventListener("offline", function(){ alert("No tienes conección a Internet. Activa el WI-FI o 3G/4G para continuar.") }, false);
 
 //Funciones
+function doplay()
+{
+	var elem = document.getElementById('ctrlaudio');
+	var status = $("#PlayButton").attr("data-status");
+
+	if(status == 0)
+	{
+		$(elem).trigger('play');
+		$("#PlayButton").attr('data-status', 1);
+		$("#PlayButton").find(".icon").removeClass("icon-play");
+		$("#PlayButton").find(".icon").addClass("icon-pause");
+	}
+	else
+	{
+		$(elem).trigger('pause');
+		$("#PlayButton").attr('data-status', 0);
+		$("#PlayButton").find(".icon").removeClass("icon-pause");
+		$("#PlayButton").find(".icon").addClass("icon-play");
+	}
+}
+
 function loadSection(name)
 {
 	$.ajax({
@@ -189,7 +204,7 @@ function loadSection(name)
 			$("#wrap").html(data);
         },
         error: function (data) {
-        	alert("La sección no está disponible.");
+        	alert("No tienes conección a Internet. Activa el WI-FI o 3G/4G para continuar.");
         }
     });
 }

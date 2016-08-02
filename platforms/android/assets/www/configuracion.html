@@ -1,22 +1,31 @@
 <div class="containerbox">
     <ul class="table-view">
       <li class="table-view-cell">
-        Item 1
-        <div class="toggle">
-          <div class="toggle-handle"></div>
-        </div>
-      </li>
-      <li class="table-view-cell">
-        Item 2
-        <div class="toggle active">
-          <div class="toggle-handle"></div>
-        </div>
-      </li>
-      <li class="table-view-cell">
-        Item 3
-        <div class="toggle">
+        Auto reproducir señal en vivo
+        <div class="toggle" id="ToggleAutoplay">
           <div class="toggle-handle"></div>
         </div>
       </li>
     </ul>
 </div>
+
+<script>
+    //Nos fijamos si esta activa la opcion
+    if(localStorage.getItem('AGZAutoPlay') == "1")
+    {
+      $("#ToggleAutoplay").addClass("active");
+    }
+
+    document.querySelector('#ToggleAutoplay').addEventListener('toggle', autoplay)
+    function autoplay(e)
+    {
+      if(e.detail.isActive)
+      {
+        localStorage.setItem('AGZAutoPlay', "1");
+      }
+      else
+      {
+        localStorage.setItem('AGZAutoPlay', "0");
+      }
+    };
+</script>

@@ -30,5 +30,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <icon src="www/img/icon.png" />
+    <preference name="orientation" value="portrait" />
 </widget>
 

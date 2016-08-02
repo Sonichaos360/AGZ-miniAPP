@@ -7,11 +7,11 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
-    <name>agzradioapp</name>
+    <name>AGZ Radio!</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Aplicación oficial de AGZRADIO.COM
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="contacto@lucianovergara.com" href="http://agzradio.com">
         Luciano Vergara
     </author>
     <content src="index.html" />
@@ -22,6 +22,14 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="www/img/icon.png" />
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="www/img/icon.png" />
+    <icon density="mdpi" src="www/img/icon.png" />
+    <icon density="hdpi" src="www/img/icon.png" />
+    <icon density="xhdpi" src="www/img/icon.png" />
+    <icon density="xxhdpi" src="www/img/icon.png" />
+    <icon density="xxxhdpi" src="www/img/icon.png" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="orientation" value="portrait" />
 </widget>
