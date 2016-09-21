@@ -204,10 +204,23 @@ function doplay()
 
 	if(status == 0)
 	{
+		//Reseteamos el SRC
+		var url = $(elem).find("source").attr("src");
+		$(elem).find("source").attr("src", "");
+		$(elem).find("source").attr("src", url);
+		$(elem).trigger('load');
+
 		$(elem).trigger('play');
-		$("#PlayButton").attr('data-status', 1);
+
 		$("#PlayButton").find(".icon").removeClass("icon-play");
 		$("#PlayButton").find(".icon").addClass("icon-pause");
+
+		//Hacemos un mini buffer
+		$(elem).trigger('pause');
+		setTimeout(function(){
+			$(elem).trigger('play');
+		}, 5000);
+
 	}
 	else
 	{
