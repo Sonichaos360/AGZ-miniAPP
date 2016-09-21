@@ -214,6 +214,7 @@ function doplay()
 
 		$("#PlayButton").find(".icon").removeClass("icon-play");
 		$("#PlayButton").find(".icon").addClass("icon-pause");
+		$("#PlayButton").attr('data-status', 1);
 
 		//Hacemos un mini buffer
 		$(elem).trigger('pause');

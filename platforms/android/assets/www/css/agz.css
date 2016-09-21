@@ -199,3 +199,8 @@ header, .bar
 	font-size: 30px;
 	margin-left: 20px;
 }
+
+.lecontenthome p
+{
+	font-size: 16px;
+}
