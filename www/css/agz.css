@@ -1,12 +1,71 @@
 body
 {
-	background: #ececec;
+	background: #f4f4f4;
+	font-family:  'Karla';
 }
 
+header
+{
+	height: 70px;
+	line-height: 70px;
+	vertical-align: middle;
+}
+.box
+{
+	background: #fff;
+	padding: 35px;
+	margin:  35px;
+}
+.menuicon
+{
+	position: absolute;
+	left: 17px;
+	top:  5px;
+}
+.showmenav.active
+{
+	left: 0 !important;
+}
+.showmenav
+{
+	position: absolute;
+	background: #323845;
+	top: 70px;
+	left: -100%;
+	bottom: 0;
+	right: 0;
+	transition:  0.35s ease-in-out;
+	width: 90%; 
+	z-index: 500
+}
+.showmenav li a
+{
+	color:  #fff;
+}
+.showmenav ul
+{
+	margin: 0;
+	padding: 0
+}
+.showmenav li a
+{
+	padding: 15px 0 15px 50px;
+	display: inline-block
+}
+.showmenav li
+{
+	list-style: none;
+	font-family: 'Poppins';
+	border-bottom: 2px solid rgba(0,0,0,0.2)
+}
+header
+{
+	position: relative
+}
 header, .bar
 {
-	background: url('../img/bg.png') #0066cc;
-	background-repeat: repeat;
+	/* background: linear-gradient(to bottom right, #ffba66 0%, #ff9d5c 100%); */
+	background:  #ffba66;
 	padding-top: 10px;
 	height: 70px;
 	border:none;
@@ -204,3 +263,35 @@ header, .bar
 {
 	font-size: 16px;
 }
+
+/* SHOWS */
+.programas
+{
+	margin: 0;
+	padding: 0;
+}
+
+.programas li
+{
+	list-style:  none;
+}
+
+.programas li a
+{
+	width: 100%;
+	height: 100px;
+	background-size: cover;
+	background-position: center;
+	display:  inline-block;
+	color:  #fff;
+	font-family: 'Ubuntu Titling';
+	font-weight: bolder;
+	text-align: center;
+	line-height: 100px;
+	text-shadow: 0 3px 0 rgba(0,0,0,0.3);
+	font-size: 20px
+}
+.p-pen{background-image: url('../img/show-penultima.jpg');}
+.p-freak{background-image: url('../img/show-freak.jpg');}
+.p-nite{background-image: url('../img/show-nite.jpg');}
+.p-neko{background-image: url('../img/show-neko.jpg');}
