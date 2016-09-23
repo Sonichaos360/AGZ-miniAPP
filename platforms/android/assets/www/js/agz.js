@@ -304,7 +304,7 @@ function doResize()
 
                     if(data == true)
                     {
-                        $("#chatcontent").prepend('<div class="containerbox"><b>'+$("input[name='Nombre']").val()+':</b> '+$("input[name='Contenido']").val()+'</div>');
+                        $("#chatcontent").prepend('<div class="containerbox"><b>'+$("input[name='Nombre']").val()+':</b><p class="text-content">'+$("input[name='Contenido']").val()+'</p></div>');
                         $("input[name='Contenido']").val("");
                     }
 
