@@ -18,7 +18,11 @@ header
 {
 	padding-top: 1px !important
 }
-.page-home, .page-perfil, .page-chat, .page-acerca
+.page-programas
+{
+	padding: 0 !important;
+}
+.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas
 {
 	min-height: 80vh;
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
@@ -142,6 +146,12 @@ header
 	left: 17px;
 	top:  5px;
 }
+.showmenav img
+{
+	margin-right: 10px;
+	margin-top: -4px;
+    vertical-align: middle;
+}
 .showmenav.active
 {
 	left: 0 !important;
@@ -158,10 +168,7 @@ header
 	width: 90%; 
 	z-index: 500
 }
-.showmenav li a
-{
-	color:  #fff;
-}
+
 .showmenav ul
 {
 	margin: 0;
@@ -170,13 +177,17 @@ header
 .showmenav li a
 {
 	padding: 15px 0 15px 50px;
-	display: inline-block
+	display: inline-block;
+	/* color:  #fff; */
+	color:  #a8aeb9;
+	width: 100%;
 }
 .showmenav li
 {
 	list-style: none;
-	font-family: 'Poppins';
-	border-bottom: 2px solid rgba(0,0,0,0.2)
+	/* font-family: 'Poppins'; */
+	font-family: 'Ubuntu Titling';
+	border-bottom: 2px solid rgba(0,0,0,0.1)
 }
 header
 {
@@ -203,7 +214,11 @@ header, .bar
 
 .bar-tab a, .bar-tab span
 {
-	font-size: 12px !important;
+	color: rgba(0, 0, 0, 0.35);
+    font-family: "Poppins";
+    text-transform: uppercase;
+    font-size: 12px !important;
+
 }
 
 #wrap
