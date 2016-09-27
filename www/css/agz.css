@@ -2,6 +2,7 @@ body
 {
 	background: #f4f4f4;
 	font-family:  'Karla';
+	position: relative
 }
 header.bar
 {
@@ -24,7 +25,8 @@ header
 }
 .page-home, .page-perfil, .page-chat, .page-acerca, .page-programas
 {
-	min-height: 80vh;
+	/* min-height: 80vh; */
+	min-height: 73.5vh;
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
 	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
 	padding: 25px;
@@ -158,7 +160,7 @@ header
 }
 .showmenav
 {
-	position: absolute;
+	position: fixed;
 	background: #323845;
 	top: 70px;
 	left: -100%;
@@ -224,7 +226,7 @@ header, .bar
 #wrap
 {
 	margin: 70px 0;
-	height: 1000px;
+	/* height: 1000px; */
 	overflow: auto !important;
 	/* padding-bottom: 580px; */
 }
