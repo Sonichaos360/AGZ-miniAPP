@@ -1,20 +1,18 @@
-<div class="containerbox">
-    <strong>Nombre</strong><br />
-    <input type="text" name="Nombre" placeholder="Tu Nombre" />
-    <br />
-    <strong>Dirección de Email</strong><br />
-    <input type="email" name="Email" placeholder="Tu Email" />
-    <strong>Edad</strong><br />
-    <input type="number" name="Edad" placeholder="Tu Edad" />
-    <strong>Sexo</strong><br />
-    <select name="Sexo">
-        <option value="Sin Indicar" selected>Sin Indicar</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Femenino">Femenino</option>
-    </select>
+<div class="page-perfil">
+    <div class="box-new">
+        <h3>Completá los siguientes datos:</h3>
+        <div class="obligatorio"><input type="text" name="Nombre" placeholder="Tu Nombre" /></div>
+        <input type="email" name="Email" placeholder="Tu Email" />
+        <input type="number" name="Edad" placeholder="Tu Edad" />
+        <select name="Sexo">
+            <option value="Sin Indicar" selected>Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+        <button class="btn btn-green" id="SavePersonalData">GUARDAR DATOS</button>
+    </div>
 </div>
 
-<button class="btn btn-primary btn-block" id="SavePersonalData">Guardar Datos</button>
 
 <script>
     $(document).ready(function(){

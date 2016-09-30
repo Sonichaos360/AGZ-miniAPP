@@ -1,12 +1,204 @@
 body
 {
-	background: #ececec;
+	background: #f4f4f4;
+	font-family:  'Karla';
+	position: relative
+}
+header.bar
+{
+	border-bottom: 2px solid rgba(255,255,255,0.15);
+	
+}
+header
+{
+	height: 70px;
+	line-height: 70px;
+	vertical-align: middle;
+}
+.page-chat
+{
+	padding-top: 1px !important
+}
+.page-programas
+{
+	padding: 0 !important;
+}
+.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas
+{
+	/* min-height: 80vh; */
+	min-height: 73.5vh;
+	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
+	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
+	padding: 25px;
+}
+.home-box-top
+{
+	min-height: 80px
+}
+.home-box span
+{
+	color: #848ca2;
+    font-weight: bolder;
+    font-size: 14px;
+}
+.home-box b
+{
+	font-family: 'Poppins';
+    font-size: 15px;
+    color: #333;
+}
+.home-box img
+{
+	width: 45px;
+	float: left;
+	margin-right: 10px
+}
+.box-new
+{
+	background: #fff;
+	padding: 35px;
+	border-radius: 7px;
+	font-family: 'Karla';
+	margin-bottom: 35px
+}
+.box-new p
+{
+	color: #848ca2;
+}
+.box-new b, .box-new strong
+{
+	color: #464c5d !important
+}
+.box
+{
+	background: #fff;
+	padding: 35px;
+	margin:  35px;
+}
+.btn-green:active
+{
+	color: #4dcd70;
+	background: transparent;
+	border: 2px solid #4dcd70;
+}
+.btn-green
+{
+    background: #4dcd70;
+}
+.btn
+{
+	width: 100%;
+    border-radius: 50px;
+    border: 0;
+    font-family: 'Poppins';
+    color: #fff;
+    height: 45px;
+    padding: 0
+}
+.obligatorio
+{
+	position: relative;
+}
+.obligatorio:before
+{
+	content: '*';
+    color: #F44336;
+    display: inline-block;
+    font-family: 'Poppins';
+    font-size: 21px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    line-height: 55px;
+    height: 45px;
+    vertical-align: middle;
+}
+.page-perfil h3
+{
+	text-align: center;
+    font-family: 'Poppins';
+    color: #333;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.page-perfil select
+{
+	margin-bottom: 35px !important
+}
+.page-perfil input, .page-perfil select
+{
+	border-radius: 500px;
+    border: 2px solid #eee;
+    height: 45px;
+    font-size: 15px;
+    font-family: 'Karla';
+    background-color: none;
+    box-shadow: none;
+    margin-bottom: 10px
+}
+.page-acerca .brand
+{
+	margin-bottom: 40px;
+	text-align: center
+}
+.menuicon
+{
+	position: absolute;
+	left: 17px;
+	top:  5px;
+}
+.showmenav img
+{
+	margin-right: 10px;
+	margin-top: -4px;
+    vertical-align: middle;
+}
+.showmenav.active
+{
+	left: 0 !important;
+}
+.showmenav
+{
+	position: fixed;
+	background: #323845;
+	top: 70px;
+	left: -100%;
+	bottom: 0;
+	right: 0;
+	transition:  0.35s ease-in-out;
+	width: 90%; 
+	z-index: 500
 }
 
+.showmenav ul
+{
+	margin: 0;
+	padding: 0
+}
+.showmenav li a
+{
+	padding: 15px 0 15px 50px;
+	display: inline-block;
+	/* color:  #fff; */
+	color:  #a8aeb9;
+	width: 100%;
+}
+.showmenav li
+{
+	list-style: none;
+	/* font-family: 'Poppins'; */
+	font-family: 'Ubuntu Titling';
+	border-bottom: 2px solid rgba(0,0,0,0.1)
+}
+header
+{
+	position: relative
+}
 header, .bar
 {
-	background: url('../img/bg.png') #0066cc;
-	background-repeat: repeat;
+	/* background: linear-gradient(to bottom right, #ffba66 0%, #ff9d5c 100%); */
+	background:  #ffba66;
 	padding-top: 10px;
 	height: 70px;
 	border:none;
@@ -24,15 +216,19 @@ header, .bar
 
 .bar-tab a, .bar-tab span
 {
-	font-size: 12px !important;
+	color: rgba(0, 0, 0, 0.35);
+    font-family: "Poppins";
+    text-transform: uppercase;
+    font-size: 12px !important;
+
 }
 
 #wrap
 {
 	margin: 70px 0;
-	height: 1000px;
+	/* height: 1000px; */
 	overflow: auto !important;
-	padding-bottom: 580px;
+	/* padding-bottom: 580px; */
 }
 
 .imgformatter
@@ -93,13 +289,24 @@ header, .bar
 	line-height: 20px;
 }
 
+.containerbox b
+{
+	/* padding: 5px; */
+    color: #00A0EE;
+    font-weight: bolder;
+    font-size: 14px;
+    display: block
+}
 .containerbox
 {
+	box-shadow: none;
+    border-radius: 5px;
+    padding: 12px;
 	margin: 10px auto;
 	background: #fff;
 	color: #333;
-	padding: 12px;
-	box-shadow: #bdc3c7 0px 1px 0px;
+	/* padding: 12px; */
+	/* box-shadow: #bdc3c7 0px 1px 0px; */
 	width: 100%;
 	display: block;
 	overflow: auto;
@@ -178,18 +385,23 @@ header, .bar
 	width: 78%;
 	float: left;
 	height: 50px;
+	border: 0;
+	font-family: 'Karla'
 }
 
 .chatnav button
 {
 	color: #fff;
 	border: none;
-	width: 20%;
-	margin-left: 2%;
-	float: left;
+	/* width: 20%; */
+	width: 50px;
 	height: 50px;
-	background: #0066cc;
+	margin-left: 2%;
+	float: right;
+	height: 50px;
+	background: #8BC34A;
 	font-size: 30px;
+	border-radius: 50px
 }
 
 #MenuButton
@@ -204,3 +416,35 @@ header, .bar
 {
 	font-size: 16px;
 }
+
+/* SHOWS */
+.programas
+{
+	margin: 0;
+	padding: 0;
+}
+
+.programas li
+{
+	list-style:  none;
+}
+
+.programas li a
+{
+	width: 100%;
+	height: 100px;
+	background-size: cover;
+	background-position: center;
+	display:  inline-block;
+	color:  #fff;
+	font-family: 'Ubuntu Titling';
+	font-weight: bolder;
+	text-align: center;
+	line-height: 100px;
+	text-shadow: 0 3px 0 rgba(0,0,0,0.3);
+	font-size: 20px
+}
+.p-pen{background-image: url('../img/show-penultima.jpg');}
+.p-freak{background-image: url('../img/show-freak.jpg');}
+.p-nite{background-image: url('../img/show-nite.jpg');}
+.p-neko{background-image: url('../img/show-neko.jpg');}
