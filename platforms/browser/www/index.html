@@ -10,6 +10,8 @@
         <link rel="stylesheet" type="text/css" href="css/ratchet.min.css">
         <link rel="stylesheet" type="text/css" href="css/agz.css" />   
         <title>AGZ Radio</title>
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700|Poppins:700" rel="stylesheet">
+
     </head>
     <body>
         <div id="drawer" class="oculto" data-status="0">
@@ -21,25 +23,35 @@
                 <li><a href="#" id="AcercaDe"><span class="icon icon-info"></span> <strong>ACERCA DE</strong></a></li>
             </ul>
         </div>
+        <div class="showmenav">
+            <ul>
+                <li><a href="#" id="HomeLink"><img width="19px" height="19px" src="img/iconos/menu-home.svg">HOME</a></li>
+                <li><a href="#" id="Programas"><img width="19px" height="19px" src="img/iconos/menu-programas.svg">PROGRAMAS</a></li>
+                <li><a href="#" id="MiPerfil"><img width="19px" height="19px" src="img/iconos/menu-perfil.svg">MI PERFIL</a></li>
+                <li><a href="#" id="Configuracion"><img width="19px" height="19px" src="img/iconos/menu-config.svg">CONFIGURACIÓN</a></li>
+                <li><a href="#" id="AcercaDe"><img width="19px" height="19px" src="img/iconos/menu-arrow.svg">ACERCA DE</a></li>
+            </ul>
+        </div>
         <div id="fullcontent">
             <header class="bar bar-nav">
-                <span class="icon icon-more-vertical" id="MenuButton"></span>
-                <center><a href="#" id="HomeLink"><img src="img/logo.png" width="80px" title="AGZ Radio" /></a></center>
+                <!-- <span class="icon icon-more-vertical" id="MenuButton"></span> -->
+                <span class="menuicon" id="btn-menu"><img width="30" src="img/menu.svg"></span>
+                <center><a href="#" id="HomeLink"><img src="img/agz.svg" width="85px" title="AGZ Radio" /></a></center>
             </header>
             <div id="wrap"></div>
             <nav class="bar bar-tab navsample oculto"></nav>
             <nav class="bar bar-tab navorigen">
               <a class="tab-item" href="#" id="PlayButton" data-status="0">
-                <span class="icon icon-play"></span>
-                <span class="tab-label"><center>En Vivo</center></span>
+                <img width="25px" src="img/iconos/play.svg">
+                <br><span>Play / Pause</span>
               </a>
               <a class="tab-item active" href="#" id="HomeLink">
-                <span class="icon icon-home"></span>
-                <span class="tab-label"><center>Home</center></span>
+                <img width="25px" src="img/iconos/home.svg">
+                <br><span>Inicio</span>
               </a>
               <a class="tab-item" href="#" id="ChatButton">
-                <span class="icon icon-compose"></span>
-                <span class="tab-label"><center>Chat</center></span>
+                <img width="25px" src="img/iconos/chat.svg">
+                <br><span>Chat</span>
               </a>
             </nav>
             <audio id="ctrlaudio">

@@ -46,14 +46,14 @@ $(document).ready(function(){
 	});	
 
 	$("body").on("click", "#HomeLink", function(){
-
+		$(".showmenav").toggleClass("active");
 		loadSection("home.html");
 
 		return false;
 	});
 
 	$("body").on("click", "#Programas", function(){
-
+		$(".showmenav").removeClass("active");
 		//El boton back volverá a
 		$("input[name='BackPage']").val("home.html");
 
@@ -63,25 +63,25 @@ $(document).ready(function(){
 	});
 
 	$("body").on("click", "#MiPerfil", function(){
-
+		$(".showmenav").toggleClass("active");
 		loadSection("perfil.html");
 		return false;
 	});
 
 	$("body").on("click", "#Configuracion", function(){
-
+		$(".showmenav").toggleClass("active");
 		loadSection("configuracion.html");
 		return false;
 	});
 
 	$("body").on("click", "#AcercaDe", function(){
-
+		$(".showmenav").toggleClass("active");
 		loadSection("acerca.html");
 		return false;
 	});
 
 	$("body").on("click", "#HomeLink", function(){
-
+		$(".showmenav").toggleClass("active");
 		loadSection("home.html");
 		return false;
 	});
@@ -107,6 +107,10 @@ $(document).ready(function(){
 
 		doplay();
 		return false;
+	});
+
+	$("#btn-menu").on("click", function(){
+		$(".showmenav").toggleClass("active")
 	});
 
 	$("#MenuButton").on("click", function(){
@@ -194,7 +198,7 @@ $(document).ready(function(){
 
 
 document.addEventListener("backbutton", onBackKeyDown, false);
-document.addEventListener("offline", function(){ alert("No tienes conección a Internet. Activa el WI-FI o 3G/4G para continuar.") }, false);
+document.addEventListener("offline", function(){ alert("No tienes conexión a Internet. Activa el WI-FI o 3G/4G para continuar.") }, false);
 
 //Funciones
 function doplay()
@@ -211,9 +215,9 @@ function doplay()
 		$(elem).trigger('load');
 
 		$(elem).trigger('play');
-
-		$("#PlayButton").find(".icon").removeClass("icon-play");
-		$("#PlayButton").find(".icon").addClass("icon-pause");
+		$("#PlayButton").find("img").attr('src',"img/iconos/pause.svg");
+		// $("#PlayButton").find(".icon").removeClass("icon-play");
+		// $("#PlayButton").find(".icon").addClass("icon-pause");
 		$("#PlayButton").attr('data-status', 1);
 
 		//Hacemos un mini buffer
@@ -229,6 +233,7 @@ function doplay()
 		$("#PlayButton").attr('data-status', 0);
 		$("#PlayButton").find(".icon").removeClass("icon-pause");
 		$("#PlayButton").find(".icon").addClass("icon-play");
+		$("#PlayButton").find("img").attr('src',"img/iconos/play.svg");
 	}
 }
 
@@ -257,7 +262,7 @@ function loadSection(name)
 			$("#wrap").html(data);
         },
         error: function (data) {
-        	alert("No tienes conección a Internet. Activa el WI-FI o 3G/4G para continuar.");
+        	alert("No tienes conexión a Internet. Activa el WI-FI o 3G/4G para continuar.");
         }
     });
 }
