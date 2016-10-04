@@ -26,7 +26,8 @@ header
 .page-home, .page-perfil, .page-chat, .page-acerca, .page-programas
 {
 	/* min-height: 80vh; */
-	min-height: 73.5vh;
+	min-height: calc(100vh - 140px);
+	/* min-height: 73.5vh; */
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
 	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
 	padding: 25px;
