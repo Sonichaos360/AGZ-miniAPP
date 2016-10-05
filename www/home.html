@@ -22,6 +22,7 @@
 
     function getRadioData()
     {
+        var imageFin = "";
         $.ajax({
             url: 'http://centova.servidoraweb.net:2199/rpc/lvergara/streaminfo.get',
             dataType: 'json',
@@ -30,6 +31,30 @@
             success: function (data) {
                 $("#ProgramaActual").html(data.data[0].title);
                 $("#CancionActual").html(data.data[0].song);
+
+                if(
+                    data.data[0].title.toLowerCase().indexOf("penúltima hora") != -1 || 
+                    data.data[0].title.toLowerCase().indexOf("penultima hora") != -1 ||
+                    data.data[0].song.toLowerCase().indexOf("penúltima hora") != -1 || 
+                    data.data[0].song.toLowerCase().indexOf("penultima hora") != -1
+                    )
+                {
+                    //imagen para penultima
+                    imageFin = 'img/sample.png';
+                }
+                else if(data.data[0].title.toLowerCase().indexOf("emerald nite") != -1 || data.data[0].song.toLowerCase().indexOf("emerald nite") != -1)
+                {
+                    //Imagen para emerald nite
+                    imageFin = 'img/sample.png';
+                }
+                else
+                {
+                    //Otro programa
+                    imageFin = 'img/sample.png';
+                }
+
+                //Colocamos la img
+                $("#ProgImg").attr("src", imageFin);
             }
         });
 
