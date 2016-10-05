@@ -81,7 +81,7 @@ $(document).ready(function(){
 	});
 
 	$("body").on("click", "#HomeLink", function(){
-		$(".showmenav").toggleClass("active");
+		$(".showmenav").removeClass("active");
 		loadSection("home.html");
 		return false;
 	});
@@ -111,24 +111,6 @@ $(document).ready(function(){
 
 	$("#btn-menu").on("click", function(){
 		$(".showmenav").toggleClass("active")
-	});
-
-	$("#MenuButton").on("click", function(){
-
-		if($("#drawer").attr("data-status") == 0)
-		{
-			$("#fullcontent").css("width", "10%");
-			$("#drawer").show("fast");
-			$("#drawer").attr("data-status", 1)
-		}
-		else
-		{
-			$("#drawer").hide("fast");
-			$("#fullcontent").css("width", "100%");
-			$("#drawer").attr("data-status", 0)
-		}
-
-		return false;
 	});
 
 	$("#drawer ul li a").on("click", function(){
