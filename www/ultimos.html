@@ -1,5 +1,6 @@
 <div class="page-ultimos">
     <div class="box-new">
+        <h3>Últimos temas reproducidos:</h3>
         <ul class="table-view" id="TableViewUltimosTemas"></ul>
     </div>
 </div>
@@ -23,7 +24,7 @@
             success: function (data) {
                 $.each(data["items"], function( i, item ) 
                 {
-                    $("#TableViewUltimosTemas").append('<li class="table-view-cell media"><img class="media-object pull-left imgformatter" src="'+item.enclosure.url+'"><div class="media-body"><span class="podtitle">'+capitalize(item.title).substring(0, 250)+'</span><p class="poddesc">Mas Datos: '+item.description+'</p></div></a></li>');
+                    $("#TableViewUltimosTemas").append('<li class="table-view-cell media"><img class="media-object pull-left imgformatter" src="'+item.enclosure.url+'"><div class="media-body"><span class="ultimostitle">'+capitalize(item.title).substring(0, 250)+'</span><p class="ultimosdata">Mas Datos: '+item.description+'</p></div></a></li>');
                 });
             }
         });
