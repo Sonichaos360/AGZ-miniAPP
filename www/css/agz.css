@@ -23,7 +23,7 @@ header
 {
 	padding: 0 !important;
 }
-.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas
+.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas, .page-ultimos
 {
 	/* min-height: 80vh; */
 	min-height: calc(100vh - 140px);
@@ -31,6 +31,14 @@ header
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
 	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
 	padding: 5px;
+}
+.separator
+{
+	height: 2px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+	border-top: 1px solid #ddd;
 }
 .home-box-top
 {
@@ -313,7 +321,10 @@ header, .bar
 	overflow: auto;
 	word-break: break-all;
 }
-
+.containerbox img
+{
+	max-width: 95%;
+}
 #drawer
 {
 	background: #fefefe;

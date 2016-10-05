@@ -1,0 +1,31 @@
+<div class="page-ultimos">
+    <ul class="table-view" id="TableViewUltimosTemas"></ul>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        getLastTemas();
+        setInterval(getLastTemas(), 30000);
+
+        return false;
+    });
+
+    function getLastTemas()
+    {
+        $.ajax({
+            url: 'http://centova.servidoraweb.net:2199/recentfeed/lvergara/json/',
+            dataType: 'json',
+            type: 'GET',
+            async: true,
+            success: function (data) {
+                $.each(data["items"], function( i, item ) 
+                {
+                    $("#TableViewUltimosTemas").append('<li class="table-view-cell media"><img class="media-object pull-left imgformatter" src="'+item.enclosure.url+'"><div class="media-body"><span class="podtitle">'+capitalize(item.title).substring(0, 250)+'</span><p class="poddesc">Mas Datos: '+item.description+'</p></div></a></li>');
+                });
+            }
+        });
+
+        return false;
+    }
+</script>

@@ -74,6 +74,12 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("body").on("click", "#LastTemas", function(){
+		$(".showmenav").toggleClass("active");
+		loadSection("ultimos.html");
+		return false;
+	});
+
 	$("body").on("click", "#AcercaDe", function(){
 		$(".showmenav").toggleClass("active");
 		loadSection("acerca.html");
