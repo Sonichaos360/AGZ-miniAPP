@@ -23,14 +23,14 @@ header
 {
 	padding: 0 !important;
 }
-.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas, .page-ultimos
+.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas, .page-ultimos, .page-pod
 {
 	/* min-height: 80vh; */
 	min-height: calc(100vh - 140px);
 	/* min-height: 73.5vh; */
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
 	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
-	padding: 5px;
+	padding: 10px;
 }
 .separator
 {
@@ -84,7 +84,7 @@ header
 	padding: 35px;
 	margin:  35px;
 }
-.btn-green:active
+.btn-green:active, .btn-freen:focus
 {
 	color: #4dcd70;
 	background: transparent;
@@ -197,7 +197,8 @@ header
 {
 	list-style: none;
 	/* font-family: 'Poppins'; */
-	font-family: 'Ubuntu Titling';
+	font-family: 'Karla';
+	font-weight: bolder;
 	border-bottom: 2px solid rgba(0,0,0,0.1)
 }
 header
@@ -274,12 +275,20 @@ header, .bar
 	width: 100%;
 	height: 250px;
 	color: #fff;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items:  center;
+	text-align: center
 }
 
 .singlepodcast .header h1
 {
 	font-size: 25px;
-	padding-top: 100px;
+	/* padding-top: 100px; */
+	margin:  0;
+	text-shadow:  2px 2px rgba(0,0,0,0.2);
 }
 
 .singlepodcast .postdata .contenido
@@ -316,7 +325,8 @@ header, .bar
 	width: 100%;
 	display: block;
 	overflow: auto;
-	word-break: break-all;
+	/* word-break: break-all; */
+	text-align: justify
 }
 .containerbox img
 {
@@ -410,6 +420,7 @@ header, .bar
 	height: 50px;
 	background: #8BC34A;
 	font-size: 30px;
+	line-height: 0;
 	border-radius: 50px
 }
 
@@ -446,7 +457,7 @@ header, .bar
 	background-position: center;
 	display:  inline-block;
 	color:  #fff;
-	font-family: 'Ubuntu Titling';
+	font-family: 'Poppins';
 	font-weight: bolder;
 	text-align: center;
 	line-height: 100px;

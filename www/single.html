@@ -20,7 +20,7 @@
             async: true,
             success: function (data) {
 
-                $(".singlepodcast .header h1").html('<center>'+data.titulo+'</center>');
+                $(".singlepodcast .header h1").html(''+data.titulo+'');
                 $(".singlepodcast .postdata .date").html('<div class="containerbox"><strong>Publicado '+data.time+'</strong></div>');
                 $(".singlepodcast .postdata").find(".contenido").html('<div class="containerbox">'+data.contenido+'</div>');
 
@@ -62,7 +62,7 @@
                 }
 
                 //Colocamos la img
-                $(".singlepodcast .header").attr("style", "background: url('"+imgforo+"') #0066cc; background-position: fixed; background-size: cover;");
+                $(".singlepodcast .header").attr("style", "background-image: url('"+imgforo+"');");
 
             },
             error: function (data) {
