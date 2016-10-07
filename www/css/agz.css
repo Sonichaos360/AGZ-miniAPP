@@ -4,7 +4,7 @@ body
 	font-family:  'Karla';
 	position: relative
 }
-svg { max-height: 100%; }
+svg, img { max-height: 100%; max-width: 100%; }
 header.bar
 {
 	border-bottom: 2px solid rgba(255,255,255,0.15);
