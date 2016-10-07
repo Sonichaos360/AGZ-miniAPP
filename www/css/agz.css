@@ -4,6 +4,7 @@ body
 	font-family:  'Karla';
 	position: relative
 }
+svg { max-height: 100%; }
 header.bar
 {
 	border-bottom: 2px solid rgba(255,255,255,0.15);
@@ -25,9 +26,10 @@ header
 }
 .page-home, .page-perfil, .page-chat, .page-acerca, .page-programas, .page-ultimos, .page-pod
 {
-	/* min-height: 80vh; */
-	min-height: calc(100vh - 140px);
+	min-height: 100vh;
+	/* min-height: calc(100vh - 140px); */
 	/* min-height: 73.5vh; */
+	background:  -webkit-linear-gradient(top, #ffba66 0%, #ff5a6a 100%);
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
 	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
 	padding: 10px;
@@ -184,6 +186,7 @@ header
 	left: -100%;
 	bottom: 0;
 	right: 0;
+	-webkit-transition: 0.35s ease-in-out;
 	transition:  0.35s ease-in-out;
 	width: 90%; 
 	z-index: 500
@@ -309,9 +312,15 @@ header, .bar
 	color: #fff;
 	background-size: cover;
 	background-position: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items:  center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align:  center;
+	    -ms-flex-align:  center;
+	        align-items:  center;
 	text-align: center
 }
 
