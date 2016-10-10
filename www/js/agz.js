@@ -320,6 +320,8 @@ function doResize()
             async: true,
             success: function (data) {
 
+			if(data != false)
+			{
             	var lastid = 0;
 
                 $.each(data, function( i, item ) {
@@ -343,6 +345,7 @@ function doResize()
                 });;
 
                  $("input[name='LastIdChat']").val(lastid);
+            }
 
             },
             error: function (data) {
