@@ -328,13 +328,12 @@ function doResize()
 
                 	if($("input[name='LastIdChat']").val() == "0")
                 	{
-
-                		$("#chatcontent").append('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                		$("#chatcontent").append('<div class="containerbox chat"><b>'+item.nombre+':</b> '+item.contenido+'<p class="chatdate">'+item.time+'</p></div>');
                 	}
                 	else
                 	{
 
-                		$("#chatcontent").prepend('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                		$("#chatcontent").prepend('<div class="containerbox chat"><b>'+item.nombre+':</b> '+item.contenido+'<p class="chatdate">'+item.time+'</p></div>');
                 	}
 
                 	if(i == 0)
