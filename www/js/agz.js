@@ -354,3 +354,13 @@ function doResize()
 
         return false;
     }
+
+    //Chequear si existe imagen
+	function imagenExiste(image)
+	{
+	    var http = new XMLHttpRequest();
+	    http.open('HEAD', image, false);
+	    http.send();
+
+	    return (http.status != 404);
+	}

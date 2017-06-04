@@ -24,7 +24,8 @@
             success: function (data) {
                 $.each(data["items"], function( i, item ) 
                 {
-                    $("#TableViewUltimosTemas").append('<li class="table-view-cell media"><img class="media-object pull-left imgformatter" src="'+item.enclosure.url+'"><div class="media-body"><span class="ultimostitle">'+capitalize(item.title).substring(0, 250)+'</span><p class="ultimosdata">Mas Datos: '+item.description+'</p></div></a></li>');
+                    // imagenExiste(item.enclosure.url);
+                    $("#TableViewUltimosTemas").append('<li class="table-view-cell media"><img class="media-object pull-left imgformatter" src="'+((imagenExiste(item.enclosure.url) ? item.enclosure.url : 'img/nocover.png'))+'"><div class="media-body"><span class="ultimostitle">'+capitalize(item.title).substring(0, 250)+'</span><p class="ultimosdata">Mas Datos: '+item.description+'</p></div></a></li>');
                 });
             }
         });
