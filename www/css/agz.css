@@ -50,14 +50,14 @@ header
 .home-box span
 {
 	color: #848ca2;
-    font-weight: bolder;
-    font-size: 14px;
+	font-weight: bolder;
+	font-size: 14px;
 }
 .home-box b
 {
 	font-family: 'Poppins';
-    font-size: 15px;
-    color: #333;
+	font-size: 15px;
+	color: #333;
 }
 .home-box img
 {
@@ -99,17 +99,17 @@ header
 }
 .btn-green
 {
-    background: #4dcd70;
+	background: #4dcd70;
 }
 .btn
 {
 	width: 100%;
-    border-radius: 50px;
-    border: 0;
-    font-family: 'Poppins';
-    color: #fff;
-    height: 45px;
-    padding: 0
+	border-radius: 50px;
+	border: 0;
+	font-family: 'Poppins';
+	color: #fff;
+	height: 45px;
+	padding: 0
 }
 .obligatorio
 {
@@ -118,17 +118,17 @@ header
 .obligatorio:before
 {
 	content: '*';
-    color: #F44336;
-    display: inline-block;
-    font-family: 'Poppins';
-    font-size: 21px;
-    position: absolute;
-    right: 15px;
-    top: 0;
-    bottom: 0;
-    line-height: 55px;
-    height: 45px;
-    vertical-align: middle;
+	color: #F44336;
+	display: inline-block;
+	font-family: 'Poppins';
+	font-size: 21px;
+	position: absolute;
+	right: 15px;
+	top: 0;
+	bottom: 0;
+	line-height: 55px;
+	height: 45px;
+	vertical-align: middle;
 }
 .page-ultimos h3
 {
@@ -137,10 +137,10 @@ header
 .page-perfil h3, .page-ultimos h3
 {
 	text-align: center;
-    font-family: 'Poppins';
-    color: #333;
-    font-size: 17px;
-    margin-bottom: 15px;
+	font-family: 'Poppins';
+	color: #333;
+	font-size: 17px;
+	margin-bottom: 15px;
 }
 .page-perfil select
 {
@@ -149,13 +149,13 @@ header
 .page-perfil input, .page-perfil select
 {
 	border-radius: 500px;
-    border: 2px solid #eee;
-    height: 45px;
-    font-size: 15px;
-    font-family: 'Karla';
-    background-color: none;
-    box-shadow: none;
-    margin-bottom: 10px
+	border: 2px solid #eee;
+	height: 45px;
+	font-size: 15px;
+	font-family: 'Karla';
+	background-color: none;
+	box-shadow: none;
+	margin-bottom: 10px
 }
 .page-acerca .brand
 {
@@ -172,7 +172,7 @@ header
 {
 	margin-right: 10px;
 	margin-top: -4px;
-    vertical-align: middle;
+	vertical-align: middle;
 }
 .showmenav.active
 {
@@ -239,9 +239,9 @@ header, .bar
 .bar-tab a, .bar-tab span
 {
 	color: rgba(0, 0, 0, 0.35);
-    font-family: "Poppins";
-    text-transform: uppercase;
-    font-size: 12px !important;
+	font-family: "Poppins";
+	text-transform: uppercase;
+	font-size: 12px !important;
 
 }
 
@@ -255,13 +255,16 @@ header, .bar
 .containerbox .icon
 {
 	width: 15px;
-    margin-right: 15px;
-    float: left;
+	margin-right: 15px;
+	float: left;
 }
 .imgformatter
 {
 	/* margin-top: 8px; */
 	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	object-position: center;
 	border-radius: 500px
 }
 .ultimostitle, span.podtitle
@@ -274,8 +277,8 @@ header, .bar
 .ultimosdata, p.poddesc
 {
 	color: #848ca2;
-    font-weight: bolder;
-    font-size: 14px;
+	font-weight: bolder;
+	font-size: 14px;
 }
 .podtitle
 {
@@ -316,11 +319,11 @@ header, .bar
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align:  center;
-	    -ms-flex-align:  center;
-	        align-items:  center;
+	-ms-flex-align:  center;
+	align-items:  center;
 	text-align: center
 }
 
@@ -338,7 +341,11 @@ header, .bar
 	line-height: 22px;
 	letter-spacing: 0.02em;
 }
-
+.singlepodcast .postdata .contenido iframe{
+		width: 100%;
+		height: 50vw;
+		border: 0;
+}
 .singlepodcast .postdata .date
 {
 	font-size: 14px;
@@ -352,10 +359,10 @@ header, .bar
 .containerbox b
 {
 	/* padding: 5px; */
-    color: #00A0EE;
-    font-weight: bolder;
-    font-size: 14px;
-    display: block
+	color: #00A0EE;
+	font-weight: bolder;
+	font-size: 14px;
+	display: block
 }
 
 .date .containerbox
@@ -365,8 +372,8 @@ header, .bar
 .containerbox
 {
 	box-shadow: none;
-    border-radius: 5px;
-    padding: 12px;
+	border-radius: 5px;
+	padding: 12px;
 	margin: 10px auto;
 	background: #fff;
 	color: #333;
@@ -493,6 +500,19 @@ header, .bar
 	margin: 0;
 	padding: 0;
 }
+.programas li a:before{
+	content: '';
+	background-color: rgba(0, 0, 0, .5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.programas li a span{
+	position: relative;
+	z-index: 2;
+}
 
 .programas li
 {
@@ -501,6 +521,7 @@ header, .bar
 
 .programas li a
 {
+	position: relative;
 	width: 100%;
 	height: 100px;
 	background-size: cover;

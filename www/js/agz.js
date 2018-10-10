@@ -169,10 +169,14 @@ $(document).ready(function(){
             type: 'GET',
             async: true,
             success: function (data) {
-                $.each(data, function( i, item ) 
-                {
-                    $("#TableViewPodcasts").append('<li class="table-view-cell media" id="PodcastItem" data-id="'+item.id_topic+'"><img class="media-object pull-left imgformatter" src="'+item.podimg+'"><div class="media-body"><span class="podtitle">'+capitalize(item.titulo).substring(0, 250)+'</span><p class="poddesc">Publicado '+item.time+'</p></div></a></li>');
-                });
+            	if (data.length) {
+	                $.each(data, function( i, item ) 
+	                {
+	                    $("#TableViewPodcasts").append('<li class="table-view-cell media" id="PodcastItem" data-id="'+item.idpodcast+'"><img class="media-object pull-left imgformatter" src="'+item.imagen+'"><div class="media-body"><span class="podtitle">'+item.podcasttitle+'</span><p class="poddesc">Publicado '+item.fecha+'</p></div></a></li>');
+	                });
+	            }else{
+                	alert("No hay podcasts disponibles.");
+	            }
             },
             error: function (data) {
                 alert("La sección no está disponible.");

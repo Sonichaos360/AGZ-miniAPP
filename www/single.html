@@ -19,10 +19,10 @@
             type: 'GET',
             async: true,
             success: function (data) {
-
-                $(".singlepodcast .header h1").html(''+data.titulo+'');
-                $(".singlepodcast .postdata .date").html('<div class="containerbox"><img class="icon" src="img/iconos/crono.svg"><strong>Publicado '+data.time+'</strong></div>');
-                $(".singlepodcast .postdata").find(".contenido").html('<div class="containerbox">'+data.contenido+'</div>');
+                console.log(data);
+                $(".singlepodcast .header h1").html(''+data.podcasttitle+'');
+                $(".singlepodcast .postdata .date").html('<div class="containerbox"><img class="icon" src="img/iconos/crono.svg"><strong>Publicado '+data.fecha+'</strong></div>');
+                $(".singlepodcast .postdata").find(".contenido").html('<div class="containerbox">'+data.podcastcontent+'</div>');
 
                 //Evaluamos el fondo segun programa
                 if(data.id_foro == 11)
