@@ -1,5 +1,6 @@
 <div class="page-home">
     <div class="box-new">
+        <center><img class="main-image" src="img/sample.png" alt="Imagen Programa" id="ProgImg" /></center>
         <div class="home-box home-box-top">
             <img src="img/iconos/mic.svg"><b>Programa actual:</b><br><span id="ProgramaActual"></span>
         </div>
@@ -8,25 +9,23 @@
         </div>
     </div>
 </div>
-<!-- <div class="lecontenthome">
-<center>
-        <p><strong>Programa Actual: </strong><span id="ProgramaActual"></span></p>
-    <p><strong>Cancion: </strong><span id="CancionActual"></span></p>
-</center>
-</div> -->
-
 
 <script type="text/javascript">
     $(document).ready(function(){
-
-        getRadioData();
-        setInterval(getRadioData(), 30000);
+        // alert(isRadioActive());
+        if(isRadioActive() == true){
+            getRadioData();
+            setInterval("getRadioData()", 30000);
+        }else{
+            $('.box-new').html('<div style="text-align: center;color: #F44336;background: rgba(244, 67, 54, .1);height: 50px;display: flex;align-items: center;justify-content: center;border-radius: 5px;border: 1px solid rgba(244, 67, 54, 0.3);">La transmision no está disponible</div>')
+        }
 
         return false;
     });
 
     function getRadioData()
     {
+        var imageFin = "";
         $.ajax({
             url: 'http://centova.servidoraweb.net:2199/rpc/lvergara/streaminfo.get',
             dataType: 'json',
@@ -35,6 +34,30 @@
             success: function (data) {
                 $("#ProgramaActual").html(data.data[0].title);
                 $("#CancionActual").html(data.data[0].song);
+
+                if(
+                    data.data[0].title.toLowerCase().indexOf("penúltima hora") != -1 || 
+                    data.data[0].title.toLowerCase().indexOf("penultima hora") != -1 ||
+                    data.data[0].song.toLowerCase().indexOf("penúltima hora") != -1 || 
+                    data.data[0].song.toLowerCase().indexOf("penultima hora") != -1
+                    )
+                {
+                    //imagen para penultima
+                    imageFin = 'img/sample.png';
+                }
+                else if(data.data[0].title.toLowerCase().indexOf("emerald nite") != -1 || data.data[0].song.toLowerCase().indexOf("emerald nite") != -1)
+                {
+                    //Imagen para emerald nite
+                    imageFin = 'img/sample.png';
+                }
+                else
+                {
+                    //Otro programa
+                    imageFin = 'img/sample.png';
+                }
+
+                //Colocamos la img
+                $("#ProgImg").attr("src", imageFin);
             }
         });
 

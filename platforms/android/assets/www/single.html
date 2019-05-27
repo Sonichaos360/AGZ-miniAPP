@@ -10,16 +10,59 @@
 <script type="text/javascript">
     //$("#testSingle").html("Single - "+$("input[name='SaveId']").val());
     $(document).ready(function(){
+
+        var imgforo = "";
+
         $.ajax({
             url: 'http://agzradio.com/ws/index.php?Action=getPodcastData&Topic='+$("input[name='SaveId']").val(),
             dataType: 'json',
             type: 'GET',
             async: true,
             success: function (data) {
+                console.log(data);
+                $(".singlepodcast .header h1").html(''+data.podcasttitle+'');
+                $(".singlepodcast .postdata .date").html('<div class="containerbox"><img class="icon" src="img/iconos/crono.svg"><strong>Publicado '+data.fecha+'</strong></div>');
+                $(".singlepodcast .postdata").find(".contenido").html('<div class="containerbox">'+data.podcastcontent+'</div>');
 
-                $(".singlepodcast .header h1").html('<center>'+data.titulo+'</center>');
-                $(".singlepodcast .postdata .date").html('<div class="containerbox"><strong>Publicado '+data.time+'</strong></div>');
-                $(".singlepodcast .postdata").find(".contenido").html('<div class="containerbox">'+data.contenido+'</div>');
+                //Evaluamos el fondo segun programa
+                if(data.id_foro == 11)
+                {
+                    //Penultima
+                    imgforo = 'img/show-penultima.jpg';
+                }
+                else if(data.id_foro == 12)
+                {
+                    //EP Podcast bg
+                    imgforo = 'img/podbg.jpg';
+                }
+                else if(data.id_foro == 21)
+                {
+                    //Live2Freak bg
+                    imgforo = 'img/show-freak.jpg';
+                }
+                else if(data.id_foro == 25)
+                {
+                    //Emerald Nite bg
+                    imgforo = 'img/show-nite.jpg';
+                }
+                else if(data.id_foro == 22)
+                {
+                    //STF Podcast bg
+                    imgforo = 'img/podbg.jpg';
+                }
+                else if(data.id_foro == 24)
+                {
+                    //Nekomeshi bg
+                    imgforo = 'img/show-neko.jpg';
+                }
+                else
+                {
+                    //otro
+                    imgforo = 'img/podbg.jpg';
+                }
+
+                //Colocamos la img
+                $(".singlepodcast .header").attr("style", "background-image: url('"+imgforo+"');");
 
             },
             error: function (data) {

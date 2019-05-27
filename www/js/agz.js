@@ -1,7 +1,34 @@
 //Variable para almacenar ID de interval del chat
 var ChatIntervalId = "";
 
+function isRadioActive(){
+	var r;
+	$.ajax({
+		url: 'http://localhost/agz-radio-2.0/ws/index.php?Action=radioStatus',
+		// url: 'http://agzradio.com/ws/index.php?Action=radioStatus',
+		dataType: 'json',
+		type: 'GET',
+		async: false,
+		success: function (data) {
+			// console.log(data);
+			// alert(data);
+			if(JSON.parse(data) == true){
+				r = true;
+			}else{
+				r = false;
+			}
+		},
+		error: function (data) {
+			r = false;
+		}
+	});
+	return r;
+}
+
 $(document).ready(function(){
+
+
+
 
 	//Evaluamos auto play
 	var aut = localStorage.getItem('AGZAutoPlay');
@@ -110,8 +137,11 @@ $(document).ready(function(){
 	});
 
 	$("body").on("click", "#PlayButton", function(){
-
-		doplay();
+        if(isRadioActive()){
+			doplay();
+		}else{
+			alert('La transmisión no está disponible');
+		}
 		return false;
 	});
 

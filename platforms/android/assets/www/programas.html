@@ -1,8 +1,29 @@
 <div class="page-programas">
-  <ul class="programas">
-    <li><a class="p-pen podelement" data-id="11" data-name="penultima">PENÚLTIMA HORA</a></li>
-    <li><a class="p-freak podelement" data-id="21" data-name="live2freak"">LIVE 2 FREAK</a></li>
-    <li><a class="p-nite podelement" data-id="25" data-name="emeraldnite">EMERALD NITE</a></li>
-    <li><a class="p-neko podelement" data-id="24" data-name="nekomeshi">NEKOMESHI</a></li>
+  <ul class="programas" id="listProgramas"><!-- 
+    <li><a class="p-pen podelement" data-id="1" data-name="penultima">PENÚLTIMA HORA</a></li>
+    <li><a class="p-freak podelement" data-id="3" data-name="live2freak"">LIVE 2 FREAK</a></li>
+    <li><a class="p-nite podelement" data-id="2" data-name="emeraldnite">EMERALD NITE</a></li>
+    <li><a class="p-neko podelement" data-id="5" data-name="nekomeshi">NEKOMESHI</a></li> -->
   </ul>
 </div>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: 'http://agzradio.com/ws/index.php?Action=getProgramas',
+            dataType: 'json',
+            type: 'GET',
+            async: true,
+            success: function (data) {
+                    $("#listProgramas").empty();
+                $.each(data, function( i, item ) 
+                {
+                	console.log(item.imagen);
+                    // imagenExiste(item.enclosure.url);
+                    $("#listProgramas").append('<li><a class="podelement" data-id="'+item.idprogramas+'" style="background-image:url('+item.imagen+')"><span>'+item.nombre+'</span></a></li>');
+                });
+            }
+        });
+
+        return false;
+    });
+</script>

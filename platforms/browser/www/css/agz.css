@@ -4,6 +4,7 @@ body
 	font-family:  'Karla';
 	position: relative
 }
+svg, img { max-height: 100%; max-width: 100%; }
 header.bar
 {
 	border-bottom: 2px solid rgba(255,255,255,0.15);
@@ -23,13 +24,24 @@ header
 {
 	padding: 0 !important;
 }
-.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas
+.page-home, .page-perfil, .page-chat, .page-acerca, .page-programas, .page-ultimos, .page-pod
 {
-	/* min-height: 80vh; */
-	min-height: 73.5vh;
+	min-height: 100vh;
+	/* min-height: calc(100vh - 140px); */
+	/* min-height: 73.5vh; */
+	background:  -webkit-linear-gradient(top, #ffba66 0%, #ff5a6a 100%);
 	background:  linear-gradient(to bottom, #ffba66 0%, #ff5a6a 100%);
 	/* background:  linear-gradient(to bottom, #f4a853 0%, #ff5a6a 100%); */
-	padding: 25px;
+	padding: 10px;
+}
+
+.separator
+{
+	height: 2px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+	border-top: 1px solid #ddd;
 }
 .home-box-top
 {
@@ -38,14 +50,14 @@ header
 .home-box span
 {
 	color: #848ca2;
-    font-weight: bolder;
-    font-size: 14px;
+	font-weight: bolder;
+	font-size: 14px;
 }
 .home-box b
 {
 	font-family: 'Poppins';
-    font-size: 15px;
-    color: #333;
+	font-size: 15px;
+	color: #333;
 }
 .home-box img
 {
@@ -61,6 +73,10 @@ header
 	font-family: 'Karla';
 	margin-bottom: 35px
 }
+.page-ultimos .box-new
+{
+	padding: 0 0;
+}
 .box-new p
 {
 	color: #848ca2;
@@ -75,7 +91,7 @@ header
 	padding: 35px;
 	margin:  35px;
 }
-.btn-green:active
+.btn-green:active, .btn-freen:focus
 {
 	color: #4dcd70;
 	background: transparent;
@@ -83,17 +99,17 @@ header
 }
 .btn-green
 {
-    background: #4dcd70;
+	background: #4dcd70;
 }
 .btn
 {
 	width: 100%;
-    border-radius: 50px;
-    border: 0;
-    font-family: 'Poppins';
-    color: #fff;
-    height: 45px;
-    padding: 0
+	border-radius: 50px;
+	border: 0;
+	font-family: 'Poppins';
+	color: #fff;
+	height: 45px;
+	padding: 0
 }
 .obligatorio
 {
@@ -102,25 +118,29 @@ header
 .obligatorio:before
 {
 	content: '*';
-    color: #F44336;
-    display: inline-block;
-    font-family: 'Poppins';
-    font-size: 21px;
-    position: absolute;
-    right: 15px;
-    top: 0;
-    bottom: 0;
-    line-height: 55px;
-    height: 45px;
-    vertical-align: middle;
+	color: #F44336;
+	display: inline-block;
+	font-family: 'Poppins';
+	font-size: 21px;
+	position: absolute;
+	right: 15px;
+	top: 0;
+	bottom: 0;
+	line-height: 55px;
+	height: 45px;
+	vertical-align: middle;
 }
-.page-perfil h3
+.page-ultimos h3
+{
+	padding: 35px 35px 0 35px;
+}
+.page-perfil h3, .page-ultimos h3
 {
 	text-align: center;
-    font-family: 'Poppins';
-    color: #333;
-    font-size: 17px;
-    margin-bottom: 15px;
+	font-family: 'Poppins';
+	color: #333;
+	font-size: 17px;
+	margin-bottom: 15px;
 }
 .page-perfil select
 {
@@ -129,13 +149,13 @@ header
 .page-perfil input, .page-perfil select
 {
 	border-radius: 500px;
-    border: 2px solid #eee;
-    height: 45px;
-    font-size: 15px;
-    font-family: 'Karla';
-    background-color: none;
-    box-shadow: none;
-    margin-bottom: 10px
+	border: 2px solid #eee;
+	height: 45px;
+	font-size: 15px;
+	font-family: 'Karla';
+	background-color: none;
+	box-shadow: none;
+	margin-bottom: 10px
 }
 .page-acerca .brand
 {
@@ -152,7 +172,7 @@ header
 {
 	margin-right: 10px;
 	margin-top: -4px;
-    vertical-align: middle;
+	vertical-align: middle;
 }
 .showmenav.active
 {
@@ -166,6 +186,7 @@ header
 	left: -100%;
 	bottom: 0;
 	right: 0;
+	-webkit-transition: 0.35s ease-in-out;
 	transition:  0.35s ease-in-out;
 	width: 90%; 
 	z-index: 500
@@ -188,7 +209,8 @@ header
 {
 	list-style: none;
 	/* font-family: 'Poppins'; */
-	font-family: 'Ubuntu Titling';
+	font-family: 'Karla';
+	font-weight: bolder;
 	border-bottom: 2px solid rgba(0,0,0,0.1)
 }
 header
@@ -217,9 +239,9 @@ header, .bar
 .bar-tab a, .bar-tab span
 {
 	color: rgba(0, 0, 0, 0.35);
-    font-family: "Poppins";
-    text-transform: uppercase;
-    font-size: 12px !important;
+	font-family: "Poppins";
+	text-transform: uppercase;
+	font-size: 12px !important;
 
 }
 
@@ -230,13 +252,34 @@ header, .bar
 	overflow: auto !important;
 	/* padding-bottom: 580px; */
 }
-
+.containerbox .icon
+{
+	width: 15px;
+	margin-right: 15px;
+	float: left;
+}
 .imgformatter
 {
-	margin-top: 8px;
+	/* margin-top: 8px; */
 	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 500px
 }
-
+.ultimostitle, span.podtitle
+{
+	display: block;
+	font-size: 15px;
+	color:  #464c5d;
+	font-weight: bold;
+}
+.ultimosdata, p.poddesc
+{
+	color: #848ca2;
+	font-weight: bolder;
+	font-size: 14px;
+}
 .podtitle
 {
 	display: block;
@@ -247,8 +290,13 @@ header, .bar
 .table-view-cell
 {
 	padding: 11px 11px 11px 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12)
 }
-
+.table-view
+{
+	background-color: transparent;
+	border-top:  0;
+}
 .poddesc
 {
 	font-size: 11px;
@@ -264,16 +312,27 @@ header, .bar
 	display: block;
 	width: 100%;
 	height: 250px;
-	background: url('../img/podbg.jpg') #0066cc;
-	background-position: fixed;
-	background-size: cover;
 	color: #fff;
+	background-size: cover;
+	background-position: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align:  center;
+	-ms-flex-align:  center;
+	align-items:  center;
+	text-align: center
 }
 
 .singlepodcast .header h1
 {
 	font-size: 25px;
-	padding-top: 100px;
+	/* padding-top: 100px; */
+	margin:  0;
+	text-shadow:  2px 2px rgba(0,0,0,0.2);
 }
 
 .singlepodcast .postdata .contenido
@@ -282,26 +341,39 @@ header, .bar
 	line-height: 22px;
 	letter-spacing: 0.02em;
 }
-
+.singlepodcast .postdata .contenido iframe{
+		width: 100%;
+		height: 50vw;
+		border: 0;
+}
 .singlepodcast .postdata .date
 {
 	font-size: 14px;
 	line-height: 20px;
 }
-
+.main-image
+{
+	border-radius: 15px;
+	margin-bottom: 25px
+}
 .containerbox b
 {
 	/* padding: 5px; */
-    color: #00A0EE;
-    font-weight: bolder;
-    font-size: 14px;
-    display: block
+	color: #00A0EE;
+	font-weight: bolder;
+	font-size: 14px;
+	display: block
+}
+
+.date .containerbox
+{
+	line-height: 15px
 }
 .containerbox
 {
 	box-shadow: none;
-    border-radius: 5px;
-    padding: 12px;
+	border-radius: 5px;
+	padding: 12px;
 	margin: 10px auto;
 	background: #fff;
 	color: #333;
@@ -310,9 +382,13 @@ header, .bar
 	width: 100%;
 	display: block;
 	overflow: auto;
-	word-break: break-all;
+	/* word-break: break-all; */
+	text-align: justify
 }
-
+.containerbox img
+{
+	max-width: 95%;
+}
 #drawer
 {
 	background: #fefefe;
@@ -401,6 +477,7 @@ header, .bar
 	height: 50px;
 	background: #8BC34A;
 	font-size: 30px;
+	line-height: 0;
 	border-radius: 50px
 }
 
@@ -423,6 +500,19 @@ header, .bar
 	margin: 0;
 	padding: 0;
 }
+.programas li a:before{
+	content: '';
+	background-color: rgba(0, 0, 0, .5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.programas li a span{
+	position: relative;
+	z-index: 2;
+}
 
 .programas li
 {
@@ -431,13 +521,14 @@ header, .bar
 
 .programas li a
 {
+	position: relative;
 	width: 100%;
 	height: 100px;
 	background-size: cover;
 	background-position: center;
 	display:  inline-block;
 	color:  #fff;
-	font-family: 'Ubuntu Titling';
+	font-family: 'Poppins';
 	font-weight: bolder;
 	text-align: center;
 	line-height: 100px;
@@ -448,3 +539,21 @@ header, .bar
 .p-freak{background-image: url('../img/show-freak.jpg');}
 .p-nite{background-image: url('../img/show-nite.jpg');}
 .p-neko{background-image: url('../img/show-neko.jpg');}
+
+.chatdate
+{
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	margin-top:5px;
+	font-size: 12px;
+	text-align: right;
+	display: block;
+	width: 100%;
+	overflow: auto;
+}
+
+.chat
+{
+	padding: 12px 12px 2px 12px;
+}

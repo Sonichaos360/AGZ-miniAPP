@@ -1,7 +1,34 @@
 //Variable para almacenar ID de interval del chat
 var ChatIntervalId = "";
 
+function isRadioActive(){
+	var r;
+	$.ajax({
+		url: 'http://localhost/agz-radio-2.0/ws/index.php?Action=radioStatus',
+		// url: 'http://agzradio.com/ws/index.php?Action=radioStatus',
+		dataType: 'json',
+		type: 'GET',
+		async: false,
+		success: function (data) {
+			// console.log(data);
+			// alert(data);
+			if(JSON.parse(data) == true){
+				r = true;
+			}else{
+				r = false;
+			}
+		},
+		error: function (data) {
+			r = false;
+		}
+	});
+	return r;
+}
+
 $(document).ready(function(){
+
+
+
 
 	//Evaluamos auto play
 	var aut = localStorage.getItem('AGZAutoPlay');
@@ -74,6 +101,12 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("body").on("click", "#LastTemas", function(){
+		$(".showmenav").toggleClass("active");
+		loadSection("ultimos.html");
+		return false;
+	});
+
 	$("body").on("click", "#AcercaDe", function(){
 		$(".showmenav").toggleClass("active");
 		loadSection("acerca.html");
@@ -81,7 +114,7 @@ $(document).ready(function(){
 	});
 
 	$("body").on("click", "#HomeLink", function(){
-		$(".showmenav").toggleClass("active");
+		$(".showmenav").removeClass("active");
 		loadSection("home.html");
 		return false;
 	});
@@ -104,31 +137,16 @@ $(document).ready(function(){
 	});
 
 	$("body").on("click", "#PlayButton", function(){
-
-		doplay();
+        if(isRadioActive()){
+			doplay();
+		}else{
+			alert('La transmisión no está disponible');
+		}
 		return false;
 	});
 
 	$("#btn-menu").on("click", function(){
 		$(".showmenav").toggleClass("active")
-	});
-
-	$("#MenuButton").on("click", function(){
-
-		if($("#drawer").attr("data-status") == 0)
-		{
-			$("#fullcontent").css("width", "10%");
-			$("#drawer").show("fast");
-			$("#drawer").attr("data-status", 1)
-		}
-		else
-		{
-			$("#drawer").hide("fast");
-			$("#fullcontent").css("width", "100%");
-			$("#drawer").attr("data-status", 0)
-		}
-
-		return false;
 	});
 
 	$("#drawer ul li a").on("click", function(){
@@ -181,10 +199,14 @@ $(document).ready(function(){
             type: 'GET',
             async: true,
             success: function (data) {
-                $.each(data, function( i, item ) 
-                {
-                    $("#TableViewPodcasts").append('<li class="table-view-cell media" id="PodcastItem" data-id="'+item.id_topic+'"><img class="media-object pull-left imgformatter" src="'+item.podimg+'"><div class="media-body"><span class="podtitle">'+capitalize(item.titulo).substring(0, 250)+'</span><p class="poddesc">Publicado '+item.time+'</p></div></a></li>');
-                });
+            	if (data.length) {
+	                $.each(data, function( i, item ) 
+	                {
+	                    $("#TableViewPodcasts").append('<li class="table-view-cell media" id="PodcastItem" data-id="'+item.idpodcast+'"><img class="media-object pull-left imgformatter" src="'+item.imagen+'"><div class="media-body"><span class="podtitle">'+item.podcasttitle+'</span><p class="poddesc">Publicado '+item.fecha+'</p></div></a></li>');
+	                });
+	            }else{
+                	alert("No hay podcasts disponibles.");
+	            }
             },
             error: function (data) {
                 alert("La sección no está disponible.");
@@ -332,19 +354,20 @@ function doResize()
             async: true,
             success: function (data) {
 
+			if(data != false)
+			{
             	var lastid = 0;
 
                 $.each(data, function( i, item ) {
 
                 	if($("input[name='LastIdChat']").val() == "0")
                 	{
-
-                		$("#chatcontent").append('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                		$("#chatcontent").append('<div class="containerbox chat"><b>'+item.nombre+':</b> '+item.contenido+'<p class="chatdate">'+item.time+'</p></div>');
                 	}
                 	else
                 	{
 
-                		$("#chatcontent").prepend('<div class="containerbox"><b>'+item.nombre+':</b> '+item.contenido+'</div>');
+                		$("#chatcontent").prepend('<div class="containerbox chat"><b>'+item.nombre+':</b> '+item.contenido+'<p class="chatdate">'+item.time+'</p></div>');
                 	}
 
                 	if(i == 0)
@@ -355,6 +378,7 @@ function doResize()
                 });;
 
                  $("input[name='LastIdChat']").val(lastid);
+            }
 
             },
             error: function (data) {
@@ -364,3 +388,13 @@ function doResize()
 
         return false;
     }
+
+    //Chequear si existe imagen
+	function imagenExiste(image)
+	{
+	    var http = new XMLHttpRequest();
+	    http.open('HEAD', image, false);
+	    http.send();
+
+	    return (http.status != 404);
+	}
