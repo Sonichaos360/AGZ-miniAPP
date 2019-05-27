@@ -4,8 +4,8 @@ var ChatIntervalId = "";
 function isRadioActive(){
 	var r;
 	$.ajax({
-		url: 'http://localhost/agz-radio-2.0/ws/index.php?Action=radioStatus',
-		// url: 'http://agzradio.com/ws/index.php?Action=radioStatus',
+		// url: 'http://localhost/agz-radio-2.0/ws/index.php?Action=radioStatus',
+		url: 'http://agzradio.com/ws/index.php?Action=radioStatus',
 		dataType: 'json',
 		type: 'GET',
 		async: false,
